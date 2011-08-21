@@ -207,7 +207,11 @@ public class MainGui {
 		int seconds = 5;
 		System.out.println("Waiting: " + seconds);
 		try {
-			Thread.sleep(seconds * 5);
+			Thread[] threads = new Thread[Thread.activeCount()];
+			Thread.enumerate(threads);
+			for (int i=0;i<threads.length;i++) {
+				threads[i].sleep(500);
+			}
 		} catch (InterruptedException e) {}
 		System.out.println("Done");
 	}
@@ -335,7 +339,7 @@ public class MainGui {
 		if (Main.subject.getAge() == 7) { startingPage = 37; }
 		if (Main.subject.getAge() == 8) { startingPage = 49; }
 		if (Main.subject.getAge() == 9) { startingPage = 59; }
-		if (Main.subject.getAge() == 10) { startingPage = 69; }
+		if (Main.subject.getAge() == 10) { startingPage = 9; }
 		if (Main.subject.getAge() == 11) { startingPage = 76; }
 		if (Main.subject.getAge() == 12) { startingPage = 81; }
 		if (Main.subject.getAge() == 13) { startingPage = 85; }

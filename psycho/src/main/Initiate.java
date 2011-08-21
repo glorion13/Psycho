@@ -29,7 +29,7 @@ public class Initiate {
 		}
 
 		// Populate 'book' list (the actual test)
-		for (int i=0;i<125;i++) {
+		for (int i=0;i<20;i++) {
 			int pageNumber = i+1;
 			System.out.println("book/"+pageNumber+"/");
 			Main.book.add(new Page(getClass().getResource("book/"+pageNumber+"/"),pageNumber));
